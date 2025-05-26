@@ -1,18 +1,8 @@
 FROM python:3.12
 
-# create and switch into your app directory
-WORKDIR /app
+ADD . /opt/ml_in_app
+WORKDIR /opt/ml_in_app
 
-# copy your code + requirements in
-COPY requirements_prod.txt .
-COPY api_server_3.py .
-# (and any other code or model files you need)
-
-# install dependencies
-RUN pip install --no-cache-dir -r requirements_prod.txt
-
-# expose port (optional, for documentation)
-EXPOSE 5000
-
-# default command
+# install packages by conda
+RUN pip install -r requirements_prod.txt
 CMD ["python", "api_server_3.py"]
