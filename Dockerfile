@@ -5,4 +5,4 @@ WORKDIR /opt/ml_in_app
 
 # install packages by conda
 RUN pip install -r requirements_prod.txt
-CMD ["python", "protected_server_blu14.py"]
+CMD ["python", "api_server_3.py"]
