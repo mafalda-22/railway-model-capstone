@@ -1,18 +1,14 @@
 [phases.setup]
-# any setup commands you need, e.g. apt installs
+# (optional) install OS-level deps here
 
 [phases.install]
-# install your Python dependencies
 run = "pip install -r requirements.txt"
 
 [phases.build]
-# optional build step e.g. compiling
-run = "echo 'Build complete'"
+run = "echo Build complete"
 
 [phases.start]
-# how to launch your app
 run = "uvicorn main:app --host 0.0.0.0 --port $PORT"
 
 [env]
-# ensure the right Python runtime
 PYTHON_PACKAGE = "python310"
